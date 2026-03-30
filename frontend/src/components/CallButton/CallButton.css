@@ -1,0 +1,71 @@
+/* ---- Floating Call Button ---- */
+.call-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--gradient-warm);
+  color: var(--color-white);
+  padding: 14px 26px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  animation: float 3s ease-in-out infinite;
+}
+
+.call-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-xl);
+  animation-play-state: paused;
+}
+
+.call-button__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.call-button__icon {
+  font-size: 16px;
+}
+
+.call-button__text {
+  letter-spacing: 0.02em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .call-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: var(--fs-sm);
+  }
+
+  .call-button__icon-wrap {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-button__text {
+    display: none;
+  }
+
+  .call-button {
+    padding: 16px;
+    border-radius: 50%;
+  }
+}
