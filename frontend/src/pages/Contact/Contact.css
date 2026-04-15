@@ -40,9 +40,15 @@
   height: 56px;
   margin: 0 auto var(--space-md);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(27, 77, 122, 0.08), rgba(42, 168, 154, 0.1));
+  background: linear-gradient(135deg, rgba(27, 122, 74, 0.08), rgba(42, 168, 154, 0.1));
   color: var(--color-primary);
   font-size: 24px;
+}
+
+/* Green variant for Call Us */
+.contact-card__icon--green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.15));
+  color: #22C55E;
 }
 
 .contact-card__title {
@@ -118,12 +124,35 @@
 .contact-form__group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(27, 77, 122, 0.1);
+  box-shadow: 0 0 0 3px rgba(27, 122, 74, 0.1);
 }
 
 .contact-form__group textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* Form Messages */
+.contact-form__success,
+.contact-form__error {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+.contact-form__success {
+  background: rgba(56, 161, 105, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(56, 161, 105, 0.3);
+}
+
+.contact-form__error {
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--color-error);
+  border: 1px solid rgba(229, 62, 62, 0.3);
 }
 
 .contact-form__submit {
@@ -142,10 +171,15 @@
   transition: all var(--transition-base);
 }
 
-.contact-form__submit:hover {
+.contact-form__submit:hover:not(:disabled) {
   background: var(--color-primary-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* ---- Info Card (right side) ---- */

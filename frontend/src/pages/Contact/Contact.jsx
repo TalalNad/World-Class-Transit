@@ -1,4 +1,6 @@
+import { useState, useRef } from 'react';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
 import SocialIcons from '../../components/SocialIcons';
@@ -10,6 +12,7 @@ const contactCards = [
     title: 'Call Us',
     lines: ['(555) 123-4567', 'Available 24/7'],
     action: { label: 'Call Now', href: 'tel:5551234567' },
+    iconClassName: 'contact-card__icon--green',
   },
   {
     icon: <FiMail />,
@@ -32,6 +35,39 @@ const contactCards = [
 ];
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Replace these heavily with your own EmailJS service, template, and public key
+    // You can get them from https://dashboard.emailjs.com/
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+    emailjs
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        () => {
+          setSubmitStatus('success');
+          setIsSubmitting(false);
+          form.current.reset(); // Clear the form
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          setSubmitStatus('error');
+          setIsSubmitting(false);
+        }
+      );
+  };
+
   return (
     <div className="contact-page">
       {/* ---- Hero ---- */}
@@ -47,7 +83,7 @@ const Contact = () => {
           <div className="contact-cards__grid">
             {contactCards.map((card, i) => (
               <div key={i} className="contact-card">
-                <div className="contact-card__icon">{card.icon}</div>
+                <div className={`contact-card__icon ${card.iconClassName || ''}`}>{card.icon}</div>
                 <h3 className="contact-card__title">{card.title}</h3>
                 {card.lines.map((line, j) => (
                   <p key={j} className="contact-card__line">{line}</p>
@@ -73,24 +109,24 @@ const Contact = () => {
                 title="Send Us a Message"
                 align="left"
               />
-              <form className="contact-form" id="contact-form-element">
+              <form ref={form} onSubmit={sendEmail} className="contact-form" id="contact-form-element">
                 <div className="contact-form__row">
                   <div className="contact-form__group">
-                    <label htmlFor="contact-name">Full Name</label>
-                    <input type="text" id="contact-name" placeholder="Your full name" />
+                    <label htmlFor="user_name">Full Name</label>
+                    <input type="text" name="user_name" id="user_name" placeholder="Your full name" required />
                   </div>
                   <div className="contact-form__group">
-                    <label htmlFor="contact-phone">Phone Number</label>
-                    <input type="tel" id="contact-phone" placeholder="(555) 000-0000" />
+                    <label htmlFor="user_phone">Phone Number</label>
+                    <input type="tel" name="user_phone" id="user_phone" placeholder="(555) 000-0000" />
                   </div>
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="contact-email">Email Address</label>
-                  <input type="email" id="contact-email" placeholder="your@email.com" />
+                  <label htmlFor="user_email">Email Address</label>
+                  <input type="email" name="user_email" id="user_email" placeholder="your@email.com" required />
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="contact-subject">Subject</label>
-                  <select id="contact-subject">
+                  <label htmlFor="subject">Subject</label>
+                  <select name="subject" id="subject" required>
                     <option value="">Select a topic</option>
                     <option value="schedule">Schedule a Ride</option>
                     <option value="services">Service Inquiry</option>
@@ -100,11 +136,23 @@ const Contact = () => {
                   </select>
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="contact-message">Message</label>
-                  <textarea id="contact-message" rows="5" placeholder="Tell us how we can help..." />
+                  <label htmlFor="message">Message</label>
+                  <textarea name="message" id="message" rows="5" placeholder="Tell us how we can help..." required />
                 </div>
-                <button type="submit" className="contact-form__submit" id="contact-submit">
-                  Send Message
+                
+                {submitStatus === 'success' && (
+                  <div className="contact-form__success">
+                    Thank you! Your message has been sent successfully. We will be in touch shortly.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="contact-form__error">
+                    Oops! Something went wrong. Please try again later or call us directly.
+                  </div>
+                )}
+
+                <button type="submit" className="contact-form__submit" id="contact-submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

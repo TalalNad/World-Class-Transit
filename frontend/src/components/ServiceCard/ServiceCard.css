@@ -19,7 +19,7 @@
   width: 64px;
   height: 64px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(27, 77, 122, 0.08), rgba(42, 168, 154, 0.1));
+  background: linear-gradient(135deg, rgba(27, 122, 74, 0.08), rgba(42, 168, 154, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;

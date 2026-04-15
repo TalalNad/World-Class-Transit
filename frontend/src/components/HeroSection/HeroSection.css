@@ -1,12 +1,15 @@
 /* ============================================
-   Hero Section
+   Hero Section — Premium Medical Transport
    ============================================ */
 .hero {
   position: relative;
-  min-height: 600px;
+  min-height: 620px;
   display: flex;
   align-items: center;
-  background: var(--gradient-hero);
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(30, 128, 115, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(42, 174, 106, 0.20) 0%, transparent 50%),
+    linear-gradient(160deg, #0a3d2a 0%, #0f573a 25%, #1b7a4a 55%, #176640 80%, #0d4f33 100%);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -15,76 +18,176 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: var(--gradient-overlay);
+  background:
+    linear-gradient(180deg, rgba(10, 61, 42, 0.50) 0%, rgba(15, 87, 58, 0.30) 40%, rgba(27, 122, 74, 0.15) 100%);
   z-index: 1;
 }
 
-/* Decorative floating shapes */
-.hero__particles {
+/* ---- Background Pattern Layer ---- */
+.hero__bg-pattern {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.hero__particle {
+/* Medical cross accents — subtle thematic touches */
+.hero__cross {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.035);
+}
+
+.hero__cross--1 {
+  width: 120px;
+  height: 120px;
+  top: 8%;
+  right: 12%;
+  animation: gentleRotate 30s linear infinite;
+}
+
+.hero__cross--2 {
+  width: 80px;
+  height: 80px;
+  bottom: 18%;
+  right: 28%;
+  animation: gentleRotate 25s linear infinite reverse;
+}
+
+.hero__cross--3 {
+  width: 60px;
+  height: 60px;
+  top: 35%;
+  right: 6%;
+  animation: gentleRotate 35s linear infinite;
+}
+
+@keyframes gentleRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Route line accents — evoke roads / transit paths */
+.hero__route {
+  position: absolute;
+  border-radius: 100px;
+}
+
+.hero__route--1 {
+  width: 350px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 30%, rgba(232,145,58,0.10) 60%, transparent 100%);
+  top: 30%;
+  right: -40px;
+  transform: rotate(-12deg);
+}
+
+.hero__route--2 {
+  width: 260px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 40%, rgba(42,174,106,0.08) 70%, transparent 100%);
+  bottom: 35%;
+  right: 5%;
+  transform: rotate(8deg);
+}
+
+/* Subtle dot grid pattern */
+.hero__dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, black 20%, transparent 70%);
+}
+
+/* Soft gradient glow orbs — depth, not "bubbles" */
+.hero__glow {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.07;
-  background: var(--color-white);
+  filter: blur(80px);
 }
 
-.hero__particle--1 {
+.hero__glow--1 {
+  width: 400px;
+  height: 400px;
+  top: -120px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(42,174,106,0.15) 0%, transparent 70%);
+}
+
+.hero__glow--2 {
   width: 300px;
   height: 300px;
-  top: -50px;
-  right: -80px;
-  animation: float 8s ease-in-out infinite;
+  bottom: -80px;
+  left: 5%;
+  background: radial-gradient(circle, rgba(42,168,154,0.10) 0%, transparent 70%);
 }
 
-.hero__particle--2 {
-  width: 200px;
-  height: 200px;
-  bottom: -40px;
-  left: 10%;
-  animation: float 6s ease-in-out infinite 1s;
+/* ---- Bottom Wave ---- */
+.hero__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  line-height: 0;
 }
 
-.hero__particle--3 {
-  width: 150px;
-  height: 150px;
-  top: 40%;
-  right: 20%;
-  animation: float 10s ease-in-out infinite 2s;
+.hero__wave svg {
+  width: 100%;
+  height: 80px;
+  display: block;
 }
 
+/* ---- Content ---- */
 .hero__content {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3xl);
-  padding: var(--space-5xl) 0;
+  padding: var(--space-5xl) 0 calc(var(--space-5xl) + 40px);
 }
 
 .hero__text {
-  max-width: 620px;
-  animation: fadeInUp 0.8s ease forwards;
+  max-width: 640px;
+  animation: heroFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero__subtitle {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-heading);
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-secondary-light);
-  margin-bottom: var(--space-md);
-  background: rgba(232, 145, 58, 0.15);
-  padding: 6px 16px;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-lg);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 20px;
   border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .hero__title {
@@ -92,14 +195,16 @@
   font-weight: var(--fw-extrabold);
   color: var(--color-white);
   margin-bottom: var(--space-lg);
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 .hero__desc {
   font-size: var(--fs-lg);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.80);
   line-height: var(--lh-relaxed);
   margin-bottom: var(--space-2xl);
+  max-width: 560px;
 }
 
 .hero__actions {
@@ -109,8 +214,10 @@
 }
 
 .hero__btn-outline {
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.30) !important;
   color: var(--color-white) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .hero__btn-outline:hover {
@@ -131,6 +238,11 @@
     text-align: center;
   }
 
+  .hero__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero__actions {
     justify-content: center;
   }
@@ -138,15 +250,20 @@
   .hero__title {
     font-size: var(--fs-4xl);
   }
+
+  .hero__cross--1 { width: 90px; height: 90px; }
+  .hero__cross--2 { width: 60px; height: 60px; }
+  .hero__cross--3 { display: none; }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 480px;
+    min-height: 500px;
   }
 
   .hero__title {
     font-size: var(--fs-2xl);
+    letter-spacing: -0.01em;
   }
 
   .hero__desc {
@@ -154,6 +271,21 @@
   }
 
   .hero__content {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-3xl) 0 calc(var(--space-3xl) + 40px);
+  }
+
+  .hero__wave svg {
+    height: 50px;
+  }
+
+  .hero__cross--1,
+  .hero__cross--2,
+  .hero__cross--3 {
+    display: none;
+  }
+
+  .hero__route--1,
+  .hero__route--2 {
+    display: none;
   }
 }

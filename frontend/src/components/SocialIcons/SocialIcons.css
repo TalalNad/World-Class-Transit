@@ -18,7 +18,7 @@
 
 /* Default variant */
 .social-icons--default .social-icons__link {
-  background: rgba(27, 77, 122, 0.08);
+  background: rgba(27, 122, 74, 0.08);
   color: var(--color-primary);
 }
 

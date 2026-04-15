@@ -1,6 +1,8 @@
 import { FiCheckCircle, FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
+import Button from '../../components/Button';
+import DedicatedFleetImg from '../../assets/dedicated-fleet.png';
 import './About.css';
 
 const values = [
@@ -100,9 +102,12 @@ const About = () => {
               </ul>
             </div>
             <div className="about-story__image-area">
-              <div className="about-story__image-placeholder">
-                <div className="about-story__image-icon">🚐</div>
-                <p>Our dedicated fleet</p>
+              <div className="about-story__image-container">
+                <img
+                  src={DedicatedFleetImg}
+                  alt="World Class Transit dedicated fleet of medical transport vehicles"
+                  className="about-story__image"
+                />
               </div>
             </div>
           </div>

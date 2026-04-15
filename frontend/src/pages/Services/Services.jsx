@@ -4,6 +4,7 @@ import SectionHeading from '../../components/SectionHeading';
 import ServiceCard from '../../components/ServiceCard';
 import Button from '../../components/Button';
 import { services } from '../../data/siteData';
+import FleetImage from '../../assets/fleet-services.png';
 import './Services.css';
 
 const processSteps = [
@@ -85,9 +86,12 @@ const Services = () => {
               </ul>
             </div>
             <div className="services-fleet__image-area">
-              <div className="services-fleet__image-placeholder">
-                <div className="services-fleet__image-icon">🚌</div>
-                <p>Our modern fleet</p>
+              <div className="services-fleet__image-container">
+                <img
+                  src={FleetImage}
+                  alt="World Class Transit comprehensive transport fleet"
+                  className="services-fleet__image"
+                />
               </div>
             </div>
           </div>
@@ -96,6 +100,12 @@ const Services = () => {
 
       {/* ---- CTA ---- */}
       <section className="services-cta">
+        <div className="services-cta__wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C480,80 960,0 1440,40 L1440,0 L0,0 Z" fill="var(--color-off-white)" />
+          </svg>
+        </div>
+        <div className="services-cta__bg-accent" aria-hidden="true" />
         <div className="container services-cta__inner">
           <h2>Need Transportation Services?</h2>
           <p>Contact us today to discuss your transit needs or schedule your first ride.</p>

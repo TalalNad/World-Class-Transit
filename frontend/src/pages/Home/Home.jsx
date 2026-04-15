@@ -4,8 +4,55 @@ import SectionHeading from '../../components/SectionHeading';
 import ServiceCard from '../../components/ServiceCard';
 import MapSection from '../../components/MapSection';
 import Button from '../../components/Button';
-import { services, stats, whyChooseUs } from '../../data/siteData';
+import { services, whyChooseUs } from '../../data/siteData';
+import CommunityCareImg from '../../assets/community-care.png';
 import './Home.css';
+
+/* ---- Client Reviews Data ---- */
+const reviews = [
+  {
+    id: 1,
+    name: 'Maria S.',
+    role: 'Patient',
+    text: 'World Class Transit made my weekly dialysis trips so much easier. The drivers are always on time and incredibly kind. I feel safe and cared for every ride.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'James T.',
+    role: 'Family Member',
+    text: "My mother relies on their wheelchair-accessible service for her doctor's appointments. The level of professionalism and compassion they show is unmatched.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: 'Linda P.',
+    role: 'Patient',
+    text: 'I was nervous about my first ride, but the driver was so friendly and helpful. They treated me like family. Highly recommend their services!',
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Robert K.',
+    role: 'Healthcare Coordinator',
+    text: 'We partnered with World Class Transit for our facility transport needs. Their reliability and communication are top-notch. Our patients love them.',
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: 'Susan M.',
+    role: 'Senior Passenger',
+    text: 'At 82 years old, getting to my appointments used to be a struggle. Now I look forward to my rides — the drivers always brighten my day.',
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'David W.',
+    role: 'Caregiver',
+    text: 'Finding reliable medical transportation for my father was stressful until we found World Class Transit. They truly go above and beyond.',
+    rating: 5,
+  },
+];
 
 const Home = () => {
   return (
@@ -26,16 +73,29 @@ const Home = () => {
         }}
       />
 
-      {/* ---- Stats Strip ---- */}
-      <section className="stats-strip">
+      {/* ---- Client Reviews Carousel ---- */}
+      <section className="reviews-strip" id="client-reviews">
         <div className="container">
-          <div className="stats-strip__grid">
-            {stats.map((stat, i) => (
-              <div key={i} className="stats-strip__item">
-                <span className="stats-strip__value">{stat.value}</span>
-                <span className="stats-strip__label">{stat.label}</span>
-              </div>
-            ))}
+          <div className="reviews-strip__header">
+            <h3 className="reviews-strip__title">What Our Clients Say</h3>
+          </div>
+          <div className="reviews-strip__track-wrapper">
+            <div className="reviews-strip__track">
+              {reviews.concat(reviews).map((review, i) => (
+                <div key={`${review.id}-${i}`} className="reviews-strip__card">
+                  <div className="reviews-strip__stars">
+                    {Array.from({ length: review.rating }, (_, j) => (
+                      <span key={j} className="reviews-strip__star">★</span>
+                    ))}
+                  </div>
+                  <p className="reviews-strip__text">&ldquo;{review.text}&rdquo;</p>
+                  <div className="reviews-strip__author">
+                    <span className="reviews-strip__name">{review.name}</span>
+                    <span className="reviews-strip__role">{review.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -45,9 +105,12 @@ const Home = () => {
         <div className="container">
           <div className="home-about__grid">
             <div className="home-about__image-area">
-              <div className="home-about__image-placeholder">
-                <div className="home-about__image-icon">🤝</div>
-                <p>Caring for our community</p>
+              <div className="home-about__image-container">
+                <img
+                  src={CommunityCareImg}
+                  alt="World Class Transit team caring for the community"
+                  className="home-about__image"
+                />
               </div>
               <div className="home-about__accent-card">
                 <span className="home-about__accent-number">15+</span>
@@ -116,7 +179,7 @@ const Home = () => {
           <div className="home-why__grid">
             {whyChooseUs.map((item, i) => (
               <div key={i} className="home-why__card">
-                <div className="home-why__icon">{item.icon}</div>
+                <div className={`home-why__icon ${item.iconClassName || ''}`}>{item.icon}</div>
                 <h4 className="home-why__title">{item.title}</h4>
                 <p className="home-why__desc">{item.description}</p>
               </div>
@@ -131,7 +194,7 @@ const Home = () => {
           <SectionHeading
             subtitle="Coverage"
             title="Our Service Area"
-            description="We proudly serve communities across the region, ensuring no one is left without access to essential transportation."
+            description="Based in Elgin, IL — we proudly serve communities within a 30-mile radius, ensuring no one is left without access to essential transportation."
           />
           <MapSection />
         </div>
@@ -139,6 +202,12 @@ const Home = () => {
 
       {/* ---- CTA Banner ---- */}
       <section className="home-cta" id="home-cta">
+        <div className="home-cta__wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C480,80 960,0 1440,40 L1440,0 L0,0 Z" fill="var(--color-white)" />
+          </svg>
+        </div>
+        <div className="home-cta__bg-accent" aria-hidden="true" />
         <div className="container home-cta__inner">
           <div className="home-cta__text">
             <h2>Ready to Schedule a Ride?</h2>

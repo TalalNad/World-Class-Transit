@@ -75,6 +75,7 @@ export const whyChooseUs = [
     icon: <FiHeart />,
     title: 'Compassionate Care',
     description: "We treat every passenger like family. That's our promise.",
+    iconClassName: 'icon-red',
   },
   {
     icon: <FiMapPin />,
@@ -88,7 +89,7 @@ export const companyInfo = {
   tagline: 'People-First Transportation',
   phone: '(555) 123-4567',
   email: 'info@wctransitgroup.com',
-  address: 'Service Area, USA',
+  address: 'Elgin, IL',
   social: {
     facebook: '#',
     linkedin: '#',

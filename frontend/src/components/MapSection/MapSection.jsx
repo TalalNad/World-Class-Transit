@@ -1,23 +1,34 @@
 import './MapSection.css';
+import ElginMap from '../../assets/Elgin.png';
 
 const MapSection = ({ className = '' }) => {
   return (
     <div className={`map-section ${className}`} id="service-area-map">
       <div className="map-section__wrapper">
-        {/* Placeholder for an actual Google Maps / Mapbox embed */}
-        <div className="map-section__placeholder">
-          <div className="map-section__icon">📍</div>
-          <h3 className="map-section__title">Our Service Area</h3>
-          <p className="map-section__text">
-            We proudly serve communities across the region, connecting people
-            to healthcare facilities, medical appointments, and essential services.
-          </p>
-          <div className="map-section__regions">
-            <span className="map-section__region">Metro Area</span>
-            <span className="map-section__region">Suburban Communities</span>
-            <span className="map-section__region">Rural Access Points</span>
+
+        <div className="map-section__map-container">
+          <img
+            src={ElginMap}
+            alt="World Class Transit service area map for Elgin, IL"
+            className="map-section__image"
+          />
+        </div>
+
+        <div className="map-section__info-bar">
+          <div className="map-section__info-item">
+            <span className="map-section__pin-icon">📍</span>
+            <div>
+              <strong>Elgin, IL</strong>
+              <span className="map-section__info-sep"> — </span>
+              <span>Main Hub</span>
+            </div>
+          </div>
+          <div className="map-section__info-item">
+            <span className="map-section__radius-badge">30 mi</span>
+            <span>Service radius in all directions</span>
           </div>
         </div>
+
       </div>
     </div>
   );

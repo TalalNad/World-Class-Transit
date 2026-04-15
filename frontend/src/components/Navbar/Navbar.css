@@ -177,7 +177,7 @@
   align-items: center;
   gap: 6px;
   padding: 10px 22px;
-  background: var(--color-secondary);
+  background: linear-gradient(135deg, #22C55E, #16A34A);
   color: var(--color-white);
   font-family: var(--font-heading);
   font-weight: var(--fw-semibold);
@@ -189,7 +189,7 @@
 }
 
 .navbar__cta:hover {
-  background: var(--color-secondary-dark);
+  background: #16A34A;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
