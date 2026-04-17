@@ -3,29 +3,32 @@
    ============================================ */
 
 :root {
-  /* ---- Primary Palette (Green) ---- */
-  --color-primary: #1B7A4A;          /* Deep trust-green */
-  --color-primary-light: #2AAE6A;
-  --color-primary-dark: #0F573A;
+  /* ---- Primary Palette (Dark Blue) ---- */
+  --color-primary: #0F2B5B;
+  /* Deep navy blue */
+  --color-primary-light: #1A3F7A;
+  --color-primary-dark: #091D3E;
 
   /* ---- Secondary / Accent ---- */
-  --color-secondary: #E8913A;        /* Warm amber-orange — welcoming, people-first */
+  --color-secondary: #E8913A;
+  /* Warm amber-orange — welcoming, people-first */
   --color-secondary-light: #F2A95B;
   --color-secondary-dark: #C97520;
 
-  /* ---- Tertiary ---- */
-  --color-teal: #2AA89A;             /* Healthcare / wellness accent */
-  --color-teal-light: #3DC4B5;
-  --color-teal-dark: #1E8073;
+  /* ---- Tertiary (Turquoise-Blue) ---- */
+  --color-teal: #1AAFB8;
+  /* Turquoise-blue — fresh, modern */
+  --color-teal-light: #40D4DE;
+  --color-teal-dark: #0E8A92;
 
   /* ---- Neutrals ---- */
   --color-white: #FFFFFF;
-  --color-off-white: #F7FAF8;
-  --color-light-gray: #E9F0EC;
-  --color-mid-gray: #9BA4B0;
-  --color-dark-gray: #4A5568;
-  --color-charcoal: #2D3748;
-  --color-black: #1A202C;
+  --color-off-white: #F4F7FB;
+  --color-light-gray: #E3EAF2;
+  --color-mid-gray: #8E99AB;
+  --color-dark-gray: #3E4C63;
+  --color-charcoal: #1E2D42;
+  --color-black: #0D1520;
 
   /* ---- Feedback ---- */
   --color-success: #38A169;
@@ -34,23 +37,33 @@
   /* ---- Gradients ---- */
   --gradient-hero: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-teal-dark) 100%);
   --gradient-warm: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
-  --gradient-card: linear-gradient(180deg, rgba(27,122,74,0.03) 0%, rgba(42,168,154,0.06) 100%);
-  --gradient-overlay: linear-gradient(180deg, rgba(15,87,58,0.85) 0%, rgba(27,122,74,0.70) 100%);
+  --gradient-card: linear-gradient(180deg, rgba(15, 43, 91, 0.03) 0%, rgba(26, 175, 184, 0.06) 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(9, 29, 62, 0.85) 0%, rgba(15, 43, 91, 0.70) 100%);
 
   /* ---- Typography ---- */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --fs-xs: 0.75rem;     /* 12px */
-  --fs-sm: 0.875rem;    /* 14px */
-  --fs-base: 1rem;      /* 16px */
-  --fs-md: 1.125rem;    /* 18px */
-  --fs-lg: 1.25rem;     /* 20px */
-  --fs-xl: 1.5rem;      /* 24px */
-  --fs-2xl: 2rem;       /* 32px */
-  --fs-3xl: 2.5rem;     /* 40px */
-  --fs-4xl: 3rem;       /* 48px */
-  --fs-5xl: 3.5rem;     /* 56px */
+  --fs-xs: 0.75rem;
+  /* 12px */
+  --fs-sm: 0.875rem;
+  /* 14px */
+  --fs-base: 1rem;
+  /* 16px */
+  --fs-md: 1.125rem;
+  /* 18px */
+  --fs-lg: 1.25rem;
+  /* 20px */
+  --fs-xl: 1.5rem;
+  /* 24px */
+  --fs-2xl: 2rem;
+  /* 32px */
+  --fs-3xl: 2.5rem;
+  /* 40px */
+  --fs-4xl: 3rem;
+  /* 48px */
+  --fs-5xl: 3.5rem;
+  /* 56px */
 
   --fw-regular: 400;
   --fw-medium: 500;
@@ -76,7 +89,7 @@
   /* ---- Layout ---- */
   --max-width: 1200px;
   --max-width-narrow: 900px;
-  --navbar-height: 80px;
+  --navbar-height: 90px;
 
   /* ---- Border Radius ---- */
   --radius-sm: 4px;
@@ -91,7 +104,7 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.10);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
-  --shadow-glow: 0 0 20px rgba(42, 168, 154, 0.25);
+  --shadow-glow: 0 0 20px rgba(26, 175, 184, 0.25);
 
   /* ---- Transitions ---- */
   --transition-fast: 150ms ease;

@@ -114,9 +114,9 @@
 .services-cta {
   position: relative;
   background:
-    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(30, 128, 115, 0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 85% 30%, rgba(42, 174, 106, 0.18) 0%, transparent 50%),
-    linear-gradient(160deg, #0a3d2a 0%, #0f573a 30%, #1b7a4a 60%, #0d4f33 100%);
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(26, 175, 184, 0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 30%, rgba(26, 63, 122, 0.18) 0%, transparent 50%),
+    linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 30%, var(--color-primary-light) 60%, var(--color-primary-dark) 100%);
   padding: var(--space-4xl) 0;
   text-align: center;
   overflow: hidden;

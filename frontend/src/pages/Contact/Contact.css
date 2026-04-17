@@ -40,15 +40,15 @@
   height: 56px;
   margin: 0 auto var(--space-md);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(27, 122, 74, 0.08), rgba(42, 168, 154, 0.1));
+  background: linear-gradient(135deg, rgba(15, 43, 91, 0.08), rgba(26, 175, 184, 0.1));
   color: var(--color-primary);
   font-size: 24px;
 }
 
 /* Green variant for Call Us */
 .contact-card__icon--green {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.15));
-  color: #22C55E;
+  background: linear-gradient(135deg, rgba(26, 175, 184, 0.1), rgba(14, 138, 146, 0.15));
+  color: var(--color-teal);
 }
 
 .contact-card__title {
@@ -124,7 +124,7 @@
 .contact-form__group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(27, 122, 74, 0.1);
+  box-shadow: 0 0 0 3px rgba(15, 43, 91, 0.1);
 }
 
 .contact-form__group textarea {

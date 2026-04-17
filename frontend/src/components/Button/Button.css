@@ -86,7 +86,7 @@
 }
 
 .btn--ghost:hover {
-  background: rgba(27, 122, 74, 0.08);
+  background: rgba(15, 43, 91, 0.08);
 }
 
 .btn--ghost::before {

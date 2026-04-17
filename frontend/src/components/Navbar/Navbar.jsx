@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import SocialIcons from '../SocialIcons';
+import LogoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const navLinks = [
@@ -49,7 +50,9 @@ const Navbar = () => {
       <nav className="navbar__main">
         <div className="container navbar__main-inner">
           <Link to="/" className="navbar__logo" id="navbar-logo">
-            <span className="navbar__logo-icon">WCT</span>
+            <div className="navbar__logo-img-wrapper">
+              <img src={LogoImg} alt="World Class Transit Logo" className="navbar__logo-img" />
+            </div>
             <div className="navbar__logo-text">
               <span className="navbar__logo-title">World Class Transit</span>
               <span className="navbar__logo-tagline">People-First Transportation</span>

@@ -219,7 +219,7 @@
   height: 56px;
   margin: 0 auto var(--space-md);
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(27, 122, 74, 0.1), rgba(42, 168, 154, 0.1));
+  background: linear-gradient(135deg, rgba(15, 43, 91, 0.1), rgba(26, 175, 184, 0.1));
   color: var(--color-primary);
   font-size: 24px;
 }
@@ -231,8 +231,8 @@
 }
 
 .home-why__icon.icon-green {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.15));
-  color: #22C55E;
+  background: linear-gradient(135deg, rgba(26, 175, 184, 0.1), rgba(14, 138, 146, 0.15));
+  color: var(--color-teal);
 }
 
 .home-why__title {
@@ -251,9 +251,9 @@
 .home-cta {
   position: relative;
   background:
-    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(30, 128, 115, 0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 85% 30%, rgba(42, 174, 106, 0.18) 0%, transparent 50%),
-    linear-gradient(160deg, #0a3d2a 0%, #0f573a 30%, #1b7a4a 60%, #0d4f33 100%);
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(26, 175, 184, 0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 30%, rgba(26, 63, 122, 0.18) 0%, transparent 50%),
+    linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 30%, var(--color-primary-light) 60%, var(--color-primary-dark) 100%);
   padding: var(--space-4xl) 0 var(--space-4xl);
   overflow: hidden;
 }
