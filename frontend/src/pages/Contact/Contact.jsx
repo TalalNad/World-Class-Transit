@@ -72,7 +72,7 @@ const Contact = () => {
     <div className="contact-page">
       {/* ---- Hero ---- */}
       <HeroSection
-        subtitle="Contact Us"
+        subtitle="Schedule a Ride"
         title={<>Let&apos;s <span className="text-highlight">Connect</span></>}
         description="Have a question, need to schedule a ride, or want to learn more about our services? We'd love to hear from you."
       />
@@ -139,7 +139,7 @@ const Contact = () => {
                   <label htmlFor="message">Message</label>
                   <textarea name="message" id="message" rows="5" placeholder="Tell us how we can help..." required />
                 </div>
-                
+
                 {submitStatus === 'success' && (
                   <div className="contact-form__success">
                     Thank you! Your message has been sent successfully. We will be in touch shortly.
@@ -161,7 +161,7 @@ const Contact = () => {
               <div className="contact-info-card">
                 <h3>Connect With Us</h3>
                 <p>
-                  Follow us on social media for updates, community stories, 
+                  Follow us on social media for updates, community stories,
                   and transportation tips.
                 </p>
                 <SocialIcons variant="default" />
