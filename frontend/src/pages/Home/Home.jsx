@@ -73,33 +73,6 @@ const Home = () => {
         }}
       />
 
-      {/* ---- Client Reviews Carousel ---- */}
-      <section className="reviews-strip" id="client-reviews">
-        <div className="container">
-          <div className="reviews-strip__header">
-            <h3 className="reviews-strip__title">What Our Clients Say</h3>
-          </div>
-          <div className="reviews-strip__track-wrapper">
-            <div className="reviews-strip__track">
-              {reviews.concat(reviews).map((review, i) => (
-                <div key={`${review.id}-${i}`} className="reviews-strip__card">
-                  <div className="reviews-strip__stars">
-                    {Array.from({ length: review.rating }, (_, j) => (
-                      <span key={j} className="reviews-strip__star">★</span>
-                    ))}
-                  </div>
-                  <p className="reviews-strip__text">&ldquo;{review.text}&rdquo;</p>
-                  <div className="reviews-strip__author">
-                    <span className="reviews-strip__name">{review.name}</span>
-                    <span className="reviews-strip__role">{review.role}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ---- About Preview ---- */}
       <section className="section home-about" id="home-about">
         <div className="container">
@@ -197,6 +170,33 @@ const Home = () => {
             description="Based in Elgin, IL — we proudly serve communities within a 30-mile radius, ensuring no one is left without access to essential transportation."
           />
           <MapSection />
+        </div>
+      </section>
+
+      {/* ---- Client Reviews Carousel ---- */}
+      <section className="reviews-strip" id="client-reviews">
+        <div className="container">
+          <div className="reviews-strip__header">
+            <h3 className="reviews-strip__title">What Our Clients Say</h3>
+          </div>
+          <div className="reviews-strip__track-wrapper">
+            <div className="reviews-strip__track">
+              {reviews.concat(reviews).map((review, i) => (
+                <div key={`${review.id}-${i}`} className="reviews-strip__card">
+                  <div className="reviews-strip__stars">
+                    {Array.from({ length: review.rating }, (_, j) => (
+                      <span key={j} className="reviews-strip__star">★</span>
+                    ))}
+                  </div>
+                  <p className="reviews-strip__text">&ldquo;{review.text}&rdquo;</p>
+                  <div className="reviews-strip__author">
+                    <span className="reviews-strip__name">{review.name}</span>
+                    <span className="reviews-strip__role">{review.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

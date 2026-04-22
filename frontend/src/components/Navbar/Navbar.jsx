@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
   { label: 'Services', path: '/services' },
+  { label: 'Start Partnership', path: '/partnership' },
   { label: 'Schedule Ride', path: '/contact' },
 ];
 

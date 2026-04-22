@@ -17,12 +17,12 @@ const Footer = () => {
                 <span className="footer__logo-icon">WCT</span>
                 <div className="footer__logo-text">
                   <span className="footer__logo-title">World Class Transit</span>
-                  <span className="footer__logo-tagline">People-First Transportation</span>
+                  <span className="footer__logo-tagline">The Care You Deserve</span>
                 </div>
               </div>
               <p className="footer__brand-desc">
-                Providing safe, reliable, and compassionate transportation services 
-                to healthcare facilities and community destinations. We&apos;re not just 
+                Providing safe, reliable, and compassionate transportation services
+                to healthcare facilities and community destinations. We&apos;re not just
                 in the transit business — we&apos;re in the people business.
               </p>
               <SocialIcons variant="footer" />
@@ -35,7 +35,8 @@ const Footer = () => {
                 <li><Link to="/" className="footer__link">Home</Link></li>
                 <li><Link to="/about" className="footer__link">About Us</Link></li>
                 <li><Link to="/services" className="footer__link">Services</Link></li>
-                <li><Link to="/contact" className="footer__link">Contact Us</Link></li>
+                <li><Link to="/contact" className="footer__link">Schedule Ride</Link></li>
+                <li><Link to="/partnership" className="footer__link">Start Partnership</Link></li>
               </ul>
             </div>
 
