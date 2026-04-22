@@ -55,7 +55,7 @@ const Navbar = () => {
             </div>
             <div className="navbar__logo-text">
               <span className="navbar__logo-title">World Class Transit</span>
-              <span className="navbar__logo-tagline">The Care They Deserve</span>
+              <span className="navbar__logo-tagline">The Care You Deserve</span>
             </div>
           </Link>
 
