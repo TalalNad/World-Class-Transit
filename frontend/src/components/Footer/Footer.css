@@ -24,32 +24,10 @@
   margin-bottom: var(--space-lg);
 }
 
-.footer__logo-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--gradient-warm);
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-weight: var(--fw-extrabold);
-  font-size: var(--fs-sm);
-  border-radius: var(--radius-md);
-}
-
-.footer__logo-title {
-  font-family: var(--font-heading);
-  font-size: var(--fs-md);
-  font-weight: var(--fw-bold);
-  color: var(--color-white);
+.footer__logo-img {
+  height: 60px;
+  width: auto;
   display: block;
-  line-height: 1.2;
-}
-
-.footer__logo-tagline {
-  font-size: var(--fs-xs);
-  color: var(--color-teal-light);
 }
 
 .footer__brand-desc {

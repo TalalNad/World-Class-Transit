@@ -90,8 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 105px;
-  min-width: 105px;
+  height: 70px;
   width: auto;
   transition: all var(--transition-base);
 }
@@ -110,14 +109,14 @@
 
 .navbar__logo-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: var(--fw-bold);
   color: var(--color-primary-dark);
   line-height: 1.2;
 }
 
 .navbar__logo-tagline {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-teal);
   font-weight: var(--fw-medium);
   letter-spacing: 0.03em;

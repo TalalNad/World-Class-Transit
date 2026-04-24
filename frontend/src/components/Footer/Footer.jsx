@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import SocialIcons from '../SocialIcons';
+import LogoImg from '../../assets/LOGO.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,11 +15,7 @@ const Footer = () => {
             {/* Brand column */}
             <div className="footer__col footer__col--brand">
               <div className="footer__logo">
-                <span className="footer__logo-icon">WCT</span>
-                <div className="footer__logo-text">
-                  <span className="footer__logo-title">World Class Transit</span>
-                  <span className="footer__logo-tagline">The Care You Deserve</span>
-                </div>
+                <img src={LogoImg} alt="World Class Transit Group" className="footer__logo-img" />
               </div>
               <p className="footer__brand-desc">
                 Providing safe, reliable, and compassionate transportation services
