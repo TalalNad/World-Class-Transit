@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import SocialIcons from '../SocialIcons';
-import LogoImg from '../../assets/LOGO.png';
+import LogoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const navLinks = [

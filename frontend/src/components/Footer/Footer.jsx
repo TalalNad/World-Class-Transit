@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import SocialIcons from '../SocialIcons';
-import LogoImg from '../../assets/LOGO.png';
+import LogoImg from '../../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
