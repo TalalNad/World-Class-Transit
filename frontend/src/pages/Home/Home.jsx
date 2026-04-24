@@ -1,5 +1,5 @@
 import { FiArrowRight, FiPhone } from 'react-icons/fi';
-import HeroSection from '../../components/HeroSection';
+import HeroCarousel from '../../components/HeroCarousel';
 import SectionHeading from '../../components/SectionHeading';
 import ServiceCard from '../../components/ServiceCard';
 import MapSection from '../../components/MapSection';
@@ -58,20 +58,7 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* ---- Hero ---- */}
-      <HeroSection
-        subtitle="World Class Transit Group"
-        title={<>Your Trusted Partner in <span className="text-highlight">Healthcare Transportation</span></>}
-        description="We're not just in the transit business — we're in the people business. Safe, reliable, and compassionate transportation connecting communities to the care they need."
-        primaryAction={{
-          label: 'Our Services',
-          to: '/services',
-          icon: <FiArrowRight />,
-        }}
-        secondaryAction={{
-          label: 'Contact Us',
-          to: '/contact',
-        }}
-      />
+      <HeroCarousel />
 
       {/* ---- About Preview ---- */}
       <section className="section home-about" id="home-about">
