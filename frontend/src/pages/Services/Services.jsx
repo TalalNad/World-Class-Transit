@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FiPhone, FiArrowRight } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
@@ -61,7 +62,7 @@ const Services = () => {
                 <h4 className="services-process__title">{item.title}</h4>
                 <p className="services-process__desc">{item.description}</p>
                 {i === 4 && (
-                   <a href="/contact#schedule-form" className="services-process__review-link">Leave Feedback →</a>
+                  <Link to="/contact#schedule-form" className="services-process__review-link">Leave Feedback →</Link>
                 )}
               </div>
             ))}
