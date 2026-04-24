@@ -23,7 +23,7 @@ const contactCards = [
   {
     icon: <FiMapPin />,
     title: 'Service Area',
-    lines: ['Metro & Suburban Areas', 'Serving 500+ communities'],
+    lines: ['Elgin, IL & Surrounding', '30-mile radius coverage'],
     action: null,
   },
   {
@@ -37,15 +37,107 @@ const contactCards = [
 const Contact = () => {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Replace these heavily with your own EmailJS service, template, and public key
-    // You can get them from https://dashboard.emailjs.com/
+    // Gather form data to build a professional ride-request email body
+    const fd = new FormData(form.current);
+    const passengerName = fd.get('passenger_name');
+    const passengerPhone = fd.get('passenger_phone');
+    const passengerEmail = fd.get('passenger_email');
+    const pickupAddress = fd.get('pickup_address');
+    const dropoffAddress = fd.get('dropoff_address');
+    const pickupDate = fd.get('pickup_date');
+    const pickupTime = fd.get('pickup_time');
+    const rideType = fd.get('ride_type');
+    const returnTrip = fd.get('return_trip');
+    const returnTime = fd.get('return_time');
+    const passengerCount = fd.get('passenger_count');
+    const specialNeeds = fd.get('special_needs');
+
+    // Format date for readability
+    const formattedDate = pickupDate
+      ? new Date(pickupDate + 'T00:00:00').toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      : 'N/A';
+
+    // Format time for readability
+    const formatTime = (t) => {
+      if (!t) return 'N/A';
+      const [h, m] = t.split(':');
+      const hour = parseInt(h, 10);
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const h12 = hour % 12 || 12;
+      return `${h12}:${m} ${ampm}`;
+    };
+
+    // Build a professional email body using a hidden field
+    const emailBody = `
+══════════════════════════════════
+   NEW RIDE REQUEST
+   World Class Transit Group
+══════════════════════════════════
+
+PASSENGER INFORMATION
+─────────────────────
+  Name:          ${passengerName}
+  Phone:         ${passengerPhone}
+  Email:         ${passengerEmail}
+
+RIDE DETAILS
+─────────────────────
+  Pickup Date:   ${formattedDate}
+  Pickup Time:   ${formatTime(pickupTime)}
+  Ride Type:     ${rideType}
+  Passengers:    ${passengerCount || '1'}
+
+LOCATIONS
+─────────────────────
+  Pickup:        ${pickupAddress}
+  Drop-off:      ${dropoffAddress}
+
+RETURN TRIP
+─────────────────────
+  Return Needed: ${returnTrip === 'yes' ? 'Yes' : 'No'}${returnTrip === 'yes' && returnTime ? `\n  Return Time:   ${formatTime(returnTime)}` : ''}
+
+SPECIAL NEEDS / NOTES
+─────────────────────
+  ${specialNeeds || 'None specified'}
+
+══════════════════════════════════
+  Submitted via wctransitgroup.com
+══════════════════════════════════
+`.trim();
+
+    // Set the hidden message field so EmailJS picks it up
+    const hiddenMsg = form.current.querySelector('input[name="message"]');
+    if (hiddenMsg) hiddenMsg.value = emailBody;
+
+    // Also set a subject line
+    const hiddenSubject = form.current.querySelector('input[name="subject"]');
+    if (hiddenSubject) hiddenSubject.value = `🚐 Ride Request — ${passengerName} — ${formattedDate}`;
+
+    // Set user_name and user_email for EmailJS template compatibility
+    const hiddenName = form.current.querySelector('input[name="user_name"]');
+    if (hiddenName) hiddenName.value = passengerName;
+    const hiddenEmail = form.current.querySelector('input[name="user_email"]');
+    if (hiddenEmail) hiddenEmail.value = passengerEmail;
+
+    // Set reply_to so the email Reply-To header points to the user's email
+    const hiddenReplyTo = form.current.querySelector('input[name="reply_to"]');
+    if (hiddenReplyTo) hiddenReplyTo.value = passengerEmail;
+    // Set from_name so the email appears to come from the passenger
+    const hiddenFromName = form.current.querySelector('input[name="from_name"]');
+    if (hiddenFromName) hiddenFromName.value = passengerName;
+
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
@@ -58,7 +150,7 @@ const Contact = () => {
         () => {
           setSubmitStatus('success');
           setIsSubmitting(false);
-          form.current.reset(); // Clear the form
+          form.current.reset();
         },
         (error) => {
           console.error('FAILED...', error.text);
@@ -73,8 +165,8 @@ const Contact = () => {
       {/* ---- Hero ---- */}
       <HeroSection
         subtitle="Schedule a Ride"
-        title={<>Let&apos;s <span className="text-highlight">Connect</span></>}
-        description="Have a question, need to schedule a ride, or want to learn more about our services? We'd love to hear from you."
+        title={<>Book Your <span className="text-highlight">Next Ride</span></>}
+        description="Fill out the form below with your ride details and we'll confirm your booking promptly. Safe, reliable, and on-time — every time."
       />
 
       {/* ---- Contact Cards ---- */}
@@ -99,72 +191,156 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* ---- Contact Form + Info ---- */}
-      <section className="section section--gray contact-form-section" id="contact-form">
+      {/* ---- Ride Scheduling Form ---- */}
+      <section className="section section--gray contact-form-section" id="schedule-form">
         <div className="container">
           <div className="contact-form__grid">
             <div className="contact-form__left">
               <SectionHeading
-                subtitle="Get In Touch"
-                title="Send Us a Message"
+                subtitle="Schedule a Ride"
+                title="Ride Request Form"
                 align="left"
               />
-              <form ref={form} onSubmit={sendEmail} className="contact-form" id="contact-form-element">
+              <form ref={form} onSubmit={sendEmail} className="contact-form" id="schedule-form-element">
+                {/* Hidden fields for EmailJS template compatibility */}
+                <input type="hidden" name="user_name" />
+                <input type="hidden" name="user_email" />
+                <input type="hidden" name="subject" />
+                <input type="hidden" name="message" />
+                <input type="hidden" name="reply_to" />
+                <input type="hidden" name="from_name" />
+
+                {/* ---- Passenger Info ---- */}
+                <div className="contact-form__section-label">Passenger Information</div>
                 <div className="contact-form__row">
                   <div className="contact-form__group">
-                    <label htmlFor="user_name">Full Name</label>
-                    <input type="text" name="user_name" id="user_name" placeholder="Your full name" required />
+                    <label htmlFor="passenger_name">Full Name *</label>
+                    <input type="text" name="passenger_name" id="passenger_name" placeholder="Passenger's full name" required />
                   </div>
                   <div className="contact-form__group">
-                    <label htmlFor="user_phone">Phone Number</label>
-                    <input type="tel" name="user_phone" id="user_phone" placeholder="(555) 000-0000" />
+                    <label htmlFor="passenger_phone">Phone Number *</label>
+                    <input type="tel" name="passenger_phone" id="passenger_phone" placeholder="(555) 000-0000" required />
                   </div>
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="user_email">Email Address</label>
-                  <input type="email" name="user_email" id="user_email" placeholder="your@email.com" required />
+                  <label htmlFor="passenger_email">Email Address *</label>
+                  <input type="email" name="passenger_email" id="passenger_email" placeholder="your@email.com" required />
+                </div>
+
+                {/* ---- Ride Details ---- */}
+                <div className="contact-form__section-label">Ride Details</div>
+                <div className="contact-form__row">
+                  <div className="contact-form__group">
+                    <label htmlFor="pickup_date">Pickup Date *</label>
+                    <input type="date" name="pickup_date" id="pickup_date" required />
+                  </div>
+                  <div className="contact-form__group">
+                    <label htmlFor="pickup_time">Pickup Time *</label>
+                    <input type="time" name="pickup_time" id="pickup_time" required />
+                  </div>
+                </div>
+                <div className="contact-form__row">
+                  <div className="contact-form__group">
+                    <label htmlFor="ride_type">Ride Type *</label>
+                    <select name="ride_type" id="ride_type" required>
+                      <option value="">Select ride type</option>
+                      <option value="Ambulatory">Ambulatory</option>
+                      <option value="Wheelchair">Wheelchair</option>
+                      <option value="Stretcher">Stretcher</option>
+                      <option value="Gurney">Gurney</option>
+                      <option value="Medical Courier">Medical Courier</option>
+                    </select>
+                  </div>
+                  <div className="contact-form__group">
+                    <label htmlFor="passenger_count">Number of Passengers</label>
+                    <select name="passenger_count" id="passenger_count">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4+</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* ---- Locations ---- */}
+                <div className="contact-form__section-label">Locations</div>
+                <div className="contact-form__group">
+                  <label htmlFor="pickup_address">Pickup Address *</label>
+                  <input type="text" name="pickup_address" id="pickup_address" placeholder="Full pickup address" required />
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="subject">Subject</label>
-                  <select name="subject" id="subject" required>
-                    <option value="">Select a topic</option>
-                    <option value="schedule">Schedule a Ride</option>
-                    <option value="services">Service Inquiry</option>
-                    <option value="partnership">Partnership / Facility Contract</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
-                  </select>
+                  <label htmlFor="dropoff_address">Drop-off Address *</label>
+                  <input type="text" name="dropoff_address" id="dropoff_address" placeholder="Full drop-off address" required />
                 </div>
+
+                {/* ---- Return Trip ---- */}
+                <div className="contact-form__section-label">Return Trip</div>
+                <div className="contact-form__row">
+                  <div className="contact-form__group">
+                    <label htmlFor="return_trip">Need a Return Trip?</label>
+                    <select name="return_trip" id="return_trip">
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                  <div className="contact-form__group">
+                    <label htmlFor="return_time">Return Pickup Time</label>
+                    <input type="time" name="return_time" id="return_time" />
+                  </div>
+                </div>
+
+                {/* ---- Special Needs ---- */}
                 <div className="contact-form__group">
-                  <label htmlFor="message">Message</label>
-                  <textarea name="message" id="message" rows="5" placeholder="Tell us how we can help..." required />
+                  <label htmlFor="special_needs">Special Needs / Notes</label>
+                  <textarea name="special_needs" id="special_needs" rows="3" placeholder="Any special requirements, mobility aids, or additional notes..." />
                 </div>
 
                 {submitStatus === 'success' && (
                   <div className="contact-form__success">
-                    Thank you! Your message has been sent successfully. We will be in touch shortly.
+                    ✅ Your ride request has been submitted successfully! Our dispatch team will confirm your booking shortly.
                   </div>
                 )}
                 {submitStatus === 'error' && (
                   <div className="contact-form__error">
-                    Oops! Something went wrong. Please try again later or call us directly.
+                    Oops! Something went wrong. Please try again later or call us directly at (555) 123-4567.
                   </div>
                 )}
 
-                <button type="submit" className="contact-form__submit" id="contact-submit" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                <button type="submit" className="contact-form__submit" id="schedule-submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting Request...' : '🚐 Submit Ride Request'}
                 </button>
               </form>
             </div>
 
             <div className="contact-form__right">
               <div className="contact-info-card">
-                <h3>Connect With Us</h3>
+                <h3>Booking Info</h3>
                 <p>
-                  Follow us on social media for updates, community stories,
-                  and transportation tips.
+                  Please submit your ride request at least <strong>24 hours in advance</strong>.
+                  For same-day or urgent rides, call us directly.
                 </p>
-                <SocialIcons variant="default" />
+
+                <div className="contact-info-card__divider" />
+
+                <h4>What Happens Next?</h4>
+                <ol className="contact-info-card__steps">
+                  <li>
+                    <span className="step-num">1</span>
+                    <span>We receive your ride request</span>
+                  </li>
+                  <li>
+                    <span className="step-num">2</span>
+                    <span>Our team confirms availability</span>
+                  </li>
+                  <li>
+                    <span className="step-num">3</span>
+                    <span>You receive a confirmation call or email</span>
+                  </li>
+                  <li>
+                    <span className="step-num">4</span>
+                    <span>Your driver arrives on time, every time</span>
+                  </li>
+                </ol>
 
                 <div className="contact-info-card__divider" />
 
@@ -185,6 +361,11 @@ const Contact = () => {
                     </div>
                   </li>
                 </ul>
+
+                <div className="contact-info-card__divider" />
+
+                <h4>Follow Us</h4>
+                <SocialIcons variant="default" />
               </div>
             </div>
           </div>

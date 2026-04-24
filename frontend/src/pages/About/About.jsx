@@ -29,12 +29,10 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2010', event: 'World Class Transit Group founded with a mission to serve.' },
-  { year: '2013', event: 'Expanded fleet to include wheelchair-accessible vehicles.' },
-  { year: '2016', event: 'Partnered with regional healthcare facilities for dedicated transport.' },
-  { year: '2019', event: 'Reached 5,000+ rides per year milestone.' },
-  { year: '2022', event: 'Launched community transit program for underserved areas.' },
-  { year: 'Today', event: 'Continuing to grow and serve — one ride, one person at a time.' },
+  { year: '2017', event: 'World Class Transit began delivering safe, dependable non-emergency medical transportation across Elgin and surrounding communities — quickly earning a reputation for reliability and patient-first care.' },
+  { year: '2018', event: 'Rapid growth took us from one van to a fleet of seven. We proudly gave back by supporting over 1,200 local students with school supplies through community partnerships and outreach initiatives.' },
+  { year: '2022', event: 'Rebranded as World Class Transit Group, we expanded our services to better serve a growing network of healthcare partners.' },
+  { year: '2026', event: 'With advanced leadership, cutting-edge dispatch technology, and new medical courier services, we now deliver faster, smarter, and fully integrated transportation solutions.' },
 ];
 
 const About = () => {
