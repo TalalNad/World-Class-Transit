@@ -16,8 +16,8 @@
 /* ---- Process Steps ---- */
 .services-process__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
   position: relative;
 }
 
@@ -61,6 +61,25 @@
 .services-process__desc {
   font-size: var(--fs-sm);
   color: var(--color-dark-gray);
+}
+
+.services-process__review-link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.services-process__review-link:hover {
+  color: var(--color-secondary-dark);
+}
+
+.services-process__card--review {
+  border: 1px solid var(--color-secondary-light);
+  background: rgba(26, 175, 184, 0.03);
 }
 
 .services-process__arrow {

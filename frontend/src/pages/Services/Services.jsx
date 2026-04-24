@@ -12,6 +12,7 @@ const processSteps = [
   { step: '02', title: 'Confirm', description: 'Receive confirmation with driver details and pickup time.' },
   { step: '03', title: 'Ride', description: 'Your driver arrives on time — sit back and ride comfortably.' },
   { step: '04', title: 'Arrive', description: 'Reach your destination safely and on schedule. Every time.' },
+  { step: '05', title: 'Review', description: 'Happy with our service? Leave us a review and share your feedback.' },
 ];
 
 const Services = () => {
@@ -55,11 +56,13 @@ const Services = () => {
           />
           <div className="services-process__grid">
             {processSteps.map((item, i) => (
-              <div key={i} className="services-process__card">
+              <div key={i} className={`services-process__card ${i === 4 ? 'services-process__card--review' : ''}`}>
                 <span className="services-process__step">{item.step}</span>
                 <h4 className="services-process__title">{item.title}</h4>
                 <p className="services-process__desc">{item.description}</p>
-                {i < processSteps.length - 1 && <div className="services-process__arrow"><FiArrowRight /></div>}
+                {i === 4 && (
+                   <a href="/contact#schedule-form" className="services-process__review-link">Leave Feedback →</a>
+                )}
               </div>
             ))}
           </div>
