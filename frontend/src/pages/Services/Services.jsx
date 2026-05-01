@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiPhone, FiArrowRight } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
@@ -5,8 +6,16 @@ import SectionHeading from '../../components/SectionHeading';
 import ServiceCard from '../../components/ServiceCard';
 import Button from '../../components/Button';
 import { services } from '../../data/siteData';
-import FleetImage from '../../assets/fleet-services.png';
+import fleetC1 from '../../assets/fleet/c1.png';
+import fleetC2 from '../../assets/fleet/c2.png';
+import fleetC3 from '../../assets/fleet/c3.png';
 import './Services.css';
+
+const fleetImages = [
+  { src: fleetC1, alt: 'World Class Transit fleet vehicle 1' },
+  { src: fleetC2, alt: 'World Class Transit fleet vehicle 2' },
+  { src: fleetC3, alt: 'World Class Transit fleet vehicle 3' },
+];
 
 const processSteps = [
   { step: '01', title: 'Schedule', description: 'Call us or submit a request online to book your ride.' },
@@ -17,6 +26,15 @@ const processSteps = [
 ];
 
 const Services = () => {
+  const [activeFleet, setActiveFleet] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFleet((prev) => (prev + 1) % fleetImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="services-page">
       {/* ---- Hero ---- */}
@@ -91,11 +109,14 @@ const Services = () => {
             </div>
             <div className="services-fleet__image-area">
               <div className="services-fleet__image-container">
-                <img
-                  src={FleetImage}
-                  alt="World Class Transit comprehensive transport fleet"
-                  className="services-fleet__image"
-                />
+                {fleetImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.src}
+                    alt={img.alt}
+                    className={`services-fleet__image ${index === activeFleet ? 'services-fleet__image--active' : ''}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
