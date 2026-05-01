@@ -108,7 +108,7 @@ const Home = () => {
           <SectionHeading
             subtitle="What We Offer"
             title="Comprehensive Transportation Services"
-            description="World Class Transit Group (WCT) is a dual-service healthcare logistics company providing Non-Emergency Medical Transportation (NEMT) and Medical Courier Services (MCS) or how you think it would flow best."
+            description="World Class Transit Group (WCT) is a dual-service healthcare logistics company providing Non-Emergency Medical Transportation (NEMT) and Medical Courier Services (MCS)."
           />
           <div className="home-services__grid">
             {services.slice(0, 4).map((service) => (
