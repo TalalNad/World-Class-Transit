@@ -23,7 +23,7 @@ const Services = () => {
       <HeroSection
         subtitle="Our Services"
         title={<>Comprehensive <span className="text-highlight">Transportation Solutions</span></>}
-        description="From medical appointments to community services, we offer reliable and compassionate transit for every need. Discover how we can help you or your organization."
+        description="World Class Transit Group (WCT) is a dual-service healthcare logistics company providing Non-Emergency Medical Transportation (NEMT) and Medical Courier Services (MCS). or how you think it would flow best."
       />
 
       {/* ---- All Services ---- */}

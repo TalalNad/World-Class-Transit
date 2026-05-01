@@ -12,7 +12,7 @@ const slides = [
     id: 1,
     image: c1,
     subtitle: 'World Class Transit Group',
-    title: 'Your Trusted Partner in Healthcare Transportation',
+    title: 'Your Trusted Partner in NEMT and Medical Courier Services',
     description: "Safe, reliable, and compassionate transportation connecting communities to the care they need.",
   },
   {

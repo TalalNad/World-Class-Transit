@@ -37,7 +37,7 @@ const Partnership = () => {
       <HeroSection
         subtitle="Healthcare Partnerships"
         title={<>Better Care Through <span className="text-highlight">Strategic Collaboration</span></>}
-        description="We work closely with healthcare facilities, brokers, and regulatory agencies to provide safe, reliable, and compliant non-emergency medical transportation."
+        description="we provide safe, reliable, and dignified transportation services that ensure patients and medical products reach their destination on time while reducing administrative burdens for healthcare partners."
       />
 
       {/* ---- Intro Section ---- */}
@@ -75,7 +75,7 @@ const Partnership = () => {
             title="Comprehensive Insurance Coverage"
             description="Our insurance portfolio is built to meet and exceed the requirements of modern healthcare facilities and regulatory bodies."
           />
-          
+
           <div className="partnership-insurance__grid">
             {insuranceDetails.map((item, index) => (
               <div key={index} className="insurance-card">

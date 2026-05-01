@@ -33,7 +33,7 @@ export const services = [
   {
     id: 'community',
     icon: <FiUsers />,
-    title: 'Community Transit',
+    title: 'Medical Courior Service',
     description:
       'Connecting communities to essential destinations — grocery stores, pharmacies, social services, and more. Mobility for everyone.',
   },
