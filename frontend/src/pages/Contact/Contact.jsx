@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import { FaCcVisa, FaCcMastercard, FaCcDiscover, FaMoneyBillWave, FaFileInvoiceDollar, FaCcPaypal } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
@@ -366,6 +367,36 @@ SPECIAL NEEDS / NOTES
 
                 <h4>Follow Us</h4>
                 <SocialIcons variant="default" />
+
+                <div className="contact-info-card__divider" />
+
+                <h4>Accepted Payment Methods</h4>
+                <ul className="payment-methods" id="payment-methods-list">
+                  <li className="payment-methods__item">
+                    <FaCcVisa className="payment-methods__icon payment-methods__icon--visa" />
+                    <span>Visa</span>
+                  </li>
+                  <li className="payment-methods__item">
+                    <FaCcMastercard className="payment-methods__icon payment-methods__icon--mastercard" />
+                    <span>Mastercard</span>
+                  </li>
+                  <li className="payment-methods__item">
+                    <FaCcDiscover className="payment-methods__icon payment-methods__icon--discover" />
+                    <span>Discover</span>
+                  </li>
+                  <li className="payment-methods__item">
+                    <FaCcPaypal className="payment-methods__icon payment-methods__icon--paypal" />
+                    <span>PayPal</span>
+                  </li>
+                  <li className="payment-methods__item">
+                    <FaMoneyBillWave className="payment-methods__icon payment-methods__icon--cash" />
+                    <span>Cash</span>
+                  </li>
+                  <li className="payment-methods__item">
+                    <FaFileInvoiceDollar className="payment-methods__icon payment-methods__icon--invoice" />
+                    <span>Check / Invoice</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

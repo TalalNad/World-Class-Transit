@@ -316,6 +316,67 @@
   color: var(--color-secondary);
 }
 
+/* ---- Payment Methods ---- */
+.payment-methods {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.payment-methods__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-off-white, #f8f9fa);
+  border: 1px solid var(--color-light-gray);
+  transition: all var(--transition-fast);
+}
+
+.payment-methods__item:hover {
+  border-color: var(--color-secondary);
+  background: rgba(26, 175, 184, 0.04);
+}
+
+.payment-methods__item span {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-charcoal);
+}
+
+.payment-methods__icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.payment-methods__icon--visa {
+  color: #1A1F71;
+}
+
+.payment-methods__icon--mastercard {
+  color: #EB001B;
+}
+
+.payment-methods__icon--discover {
+  color: #FF6000;
+}
+
+.payment-methods__icon--paypal {
+  color: #003087;
+}
+
+.payment-methods__icon--cash {
+  color: #22C55E;
+}
+
+.payment-methods__icon--invoice {
+  color: #6B7280;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .contact-cards__grid {

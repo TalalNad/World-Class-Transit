@@ -90,7 +90,7 @@ const Home = () => {
                 passenger.
               </p>
               <p className="home-about__text">
-                Whether it&apos;s a routine medical appointment, ongoing treatment, or community
+                Whether it&apos;s a routine medical appointment, ongoing treatment, or medical courier
                 services, our professionally trained drivers ensure you arrive safely,
                 comfortably, and on time.
               </p>

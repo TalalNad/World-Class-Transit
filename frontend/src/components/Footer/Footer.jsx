@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import SocialIcons from '../SocialIcons';
-import LogoImg from '../../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,9 +13,6 @@ const Footer = () => {
           <div className="footer__grid">
             {/* Brand column */}
             <div className="footer__col footer__col--brand">
-              <div className="footer__logo">
-                <img src={LogoImg} alt="World Class Transit Group" className="footer__logo-img" />
-              </div>
               <p className="footer__brand-desc">
                 Providing safe, reliable, and compassionate transportation services
                 to healthcare facilities and community destinations. We&apos;re not just
