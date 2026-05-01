@@ -5,7 +5,7 @@ import ServiceCard from '../../components/ServiceCard';
 import MapSection from '../../components/MapSection';
 import Button from '../../components/Button';
 import { services, whyChooseUs } from '../../data/siteData';
-import CommunityCareImg from '../../assets/community-care.png';
+import WhoWeAreImg from '../../assets/who-we-are.jpg';
 import './Home.css';
 
 /* ---- Client Reviews Data ---- */
@@ -67,8 +67,8 @@ const Home = () => {
             <div className="home-about__image-area">
               <div className="home-about__image-container">
                 <img
-                  src={CommunityCareImg}
-                  alt="World Class Transit team caring for the community"
+                  src={WhoWeAreImg}
+                  alt="World Class Transit driver helping wheelchair patient board the transit van"
                   className="home-about__image"
                 />
               </div>
