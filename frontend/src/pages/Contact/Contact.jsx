@@ -63,11 +63,11 @@ const Contact = () => {
     // Format date for readability
     const formattedDate = pickupDate
       ? new Date(pickupDate + 'T00:00:00').toLocaleDateString('en-US', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
       : 'N/A';
 
     // Format time for readability
@@ -387,10 +387,6 @@ SPECIAL NEEDS / NOTES
                   <li className="payment-methods__item">
                     <FaCcPaypal className="payment-methods__icon payment-methods__icon--paypal" />
                     <span>PayPal</span>
-                  </li>
-                  <li className="payment-methods__item">
-                    <FaMoneyBillWave className="payment-methods__icon payment-methods__icon--cash" />
-                    <span>Cash</span>
                   </li>
                   <li className="payment-methods__item">
                     <FaFileInvoiceDollar className="payment-methods__icon payment-methods__icon--invoice" />
