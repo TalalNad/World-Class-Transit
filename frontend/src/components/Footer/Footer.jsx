@@ -40,7 +40,7 @@ const Footer = () => {
                 <li><Link to="/services" className="footer__link">Medical Transportation</Link></li>
                 <li><Link to="/services" className="footer__link">Non-Emergency Transport</Link></li>
                 <li><Link to="/services" className="footer__link">Wheelchair Services</Link></li>
-                <li><Link to="/services" className="footer__link">Community Transit</Link></li>
+                <li><Link to="/services" className="footer__link">Medical Courier Services</Link></li>
               </ul>
             </div>
 
