@@ -55,6 +55,43 @@
   line-height: var(--lh-relaxed);
 }
 
+/* ---- Our Story ---- */
+.about-story__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-story__content p {
+  margin-bottom: var(--space-md);
+  color: var(--color-dark-gray);
+  line-height: var(--lh-relaxed);
+  font-size: var(--fs-base);
+}
+
+.about-story__list {
+  list-style: none;
+  margin-top: var(--space-lg);
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md) var(--space-xl);
+}
+
+.about-story__list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-charcoal);
+}
+
+.about-story__check {
+  color: var(--color-teal);
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+
 /* ---- Leadership Team ---- */
 .about-leadership__grid {
   display: grid;

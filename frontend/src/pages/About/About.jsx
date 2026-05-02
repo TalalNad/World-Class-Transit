@@ -1,4 +1,4 @@
-import { FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
+import { FiCheckCircle, FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
 import './About.css';
@@ -64,6 +64,36 @@ const About = () => {
                 unwavering commitment to the well-being of every passenger we serve.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Our Story ---- */}
+      <section className="section section--gray about-story" id="about-story">
+        <div className="container">
+          <div className="about-story__content">
+            <SectionHeading
+              subtitle="Our Story"
+              title="Built on Care, Driven by Purpose"
+            />
+            <p>
+              World Class Transit Group was born from a simple observation: too many
+              people in our community were missing critical healthcare appointments
+              because they lacked reliable transportation. We set out to change that.
+            </p>
+            <p>
+              What started as a small operation with a handful of dedicated drivers
+              has grown into a comprehensive transit service covering hundreds of
+              communities. But no matter how much we grow, our core principle remains
+              the same &mdash; every person deserves to be treated with respect, dignity,
+              and genuine care.
+            </p>
+            <ul className="about-story__list">
+              <li><FiCheckCircle className="about-story__check" /> Professionally trained and certified drivers</li>
+              <li><FiCheckCircle className="about-story__check" /> Modern, well-maintained fleet</li>
+              <li><FiCheckCircle className="about-story__check" /> Full ADA compliance on all vehicles</li>
+              <li><FiCheckCircle className="about-story__check" /> 24/7 dispatch and support</li>
+            </ul>
           </div>
         </div>
       </section>
