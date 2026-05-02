@@ -65,6 +65,7 @@ export const whyChooseUs = [
     icon: <FiShield />,
     title: 'Safety First',
     description: 'All vehicles inspected regularly. Drivers background-checked and certified.',
+    iconClassName: 'icon-red',
   },
   {
     icon: <FiClock />,
@@ -81,6 +82,7 @@ export const whyChooseUs = [
     icon: <FiMapPin />,
     title: 'Wide Coverage',
     description: 'Extensive service area connecting urban, suburban, and rural communities.',
+    iconClassName: 'icon-green',
   },
 ];
 

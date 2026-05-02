@@ -107,7 +107,7 @@ const Home = () => {
         <div className="container">
           <SectionHeading
             subtitle="What We Offer"
-            title="Comprehensive Transportation Services"
+            title="Comprehensive Transportation Solutions"
             description="World Class Transit Group (WCT) is a dual-service healthcare logistics company providing Non-Emergency Medical Transportation (NEMT) and Medical Courier Services (MCS)."
           />
           <div className="home-services__grid">

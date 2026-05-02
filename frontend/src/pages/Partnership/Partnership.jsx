@@ -7,19 +7,19 @@ const insuranceDetails = [
   {
     icon: <FiShield />,
     title: 'Auto Liability',
-    amount: '$1,000,000',
+    amount: '$1,000,000+',
     desc: 'Per occurrence coverage for our entire fleet.'
   },
   {
     icon: <FiFileText />,
     title: 'General Liability',
-    amount: '$1,000,000',
+    amount: '$1,000,000+',
     desc: 'Comprehensive coverage per occurrence for operational peace of mind.'
   },
   {
     icon: <FiUserCheck />,
     title: 'Professional Liability',
-    amount: '$1,000,000',
+    amount: '$1,000,000+',
     desc: 'Full Errors & Omissions (E&O) coverage to protect all stakeholders.'
   },
   {
