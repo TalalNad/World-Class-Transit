@@ -1,8 +1,6 @@
-import { FiCheckCircle, FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
+import { FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
-import Button from '../../components/Button';
-import DedicatedFleetImg from '../../assets/dedicated-fleet.png';
 import './About.css';
 
 const values = [
@@ -70,42 +68,60 @@ const About = () => {
         </div>
       </section>
 
-      {/* ---- Our Story ---- */}
-      <section className="section section--gray about-story" id="about-story">
+      {/* ---- Leadership Team ---- */}
+      <section className="section section--gray about-leadership" id="about-leadership">
         <div className="container">
-          <div className="about-story__grid">
-            <div className="about-story__content">
-              <SectionHeading
-                subtitle="Our Story"
-                title="Built on Care, Driven by Purpose"
-                align="left"
-              />
-              <p>
-                World Class Transit Group was born from a simple observation: too many
-                people in our community were missing critical healthcare appointments
-                because they lacked reliable transportation. We set out to change that.
-              </p>
-              <p>
-                What started as a small operation with a handful of dedicated drivers
-                has grown into a comprehensive transit service covering hundreds of
-                communities. But no matter how much we grow, our core principle remains
-                the same — every person deserves to be treated with respect, dignity,
-                and genuine care.
-              </p>
-              <ul className="about-story__list">
-                <li><FiCheckCircle className="about-story__check" /> Professionally trained and certified drivers</li>
-                <li><FiCheckCircle className="about-story__check" /> Modern, well-maintained fleet</li>
-                <li><FiCheckCircle className="about-story__check" /> Full ADA compliance on all vehicles</li>
-                <li><FiCheckCircle className="about-story__check" /> 24/7 dispatch and support</li>
-              </ul>
+          <SectionHeading
+            subtitle="Our Leadership"
+            title="Meet the Team Behind World Class Transit"
+            description="Our leadership team brings decades of combined experience in transportation, public affairs, and fleet operations."
+          />
+          <div className="about-leadership__grid">
+            {/* Jeremy Hawkins */}
+            <div className="about-leadership__card">
+              <div className="about-leadership__photo">
+                <div className="about-leadership__photo-placeholder">
+                  <span>JH</span>
+                </div>
+              </div>
+              <div className="about-leadership__info">
+                <h3 className="about-leadership__name">Jeremy Hawkins</h3>
+                <span className="about-leadership__title">Founder &amp; Chief Executive Officer</span>
+                <p className="about-leadership__bio">
+                  Jeremy Hawkins is an experienced sales and operations professional with over 15 years of success in boosting revenue, improving margins, and optimizing processes across transportation, manufacturing, and B2B service industries. He has a proven track record of building scalable sales systems, enhancing team performance, and fostering strong relationships in fast-paced, high-demand environments.
+                </p>
+              </div>
             </div>
-            <div className="about-story__image-area">
-              <div className="about-story__image-container">
-                <img
-                  src={DedicatedFleetImg}
-                  alt="World Class Transit dedicated fleet of medical transport vehicles"
-                  className="about-story__image"
-                />
+
+            {/* Corey Dixon */}
+            <div className="about-leadership__card">
+              <div className="about-leadership__photo">
+                <div className="about-leadership__photo-placeholder">
+                  <span>CD</span>
+                </div>
+              </div>
+              <div className="about-leadership__info">
+                <h3 className="about-leadership__name">Corey D. Dixon, MPA</h3>
+                <span className="about-leadership__title">Chief Strategy &amp; Public Affairs Officer</span>
+                <p className="about-leadership__bio">
+                  Corey Dixon is a public affairs and operations leader with over a decade of experience at the intersection of government, business, and community engagement. As a City Councilman in Elgin, he provides strategic oversight for a city of 115,000+ residents and a $400M+ budget. He has led impactful programs in public safety, reduced recidivism, secured grant funding, and built partnerships that connect people to jobs and drive community growth.
+                </p>
+              </div>
+            </div>
+
+            {/* Demetrious Dixon */}
+            <div className="about-leadership__card">
+              <div className="about-leadership__photo">
+                <div className="about-leadership__photo-placeholder">
+                  <span>DD</span>
+                </div>
+              </div>
+              <div className="about-leadership__info">
+                <h3 className="about-leadership__name">Demetrious Dixon</h3>
+                <span className="about-leadership__title">Director of Fleet Operations</span>
+                <p className="about-leadership__bio">
+                  Demetrious Dixon is a transportation and logistics professional in roadway operations, fleet management, and safety compliance. Having a background with the Illinois Department of Transportation, he is responsible for maintaining critical infrastructure, operating heavy equipment, and responding to emergency roadway situations. He holds a Class A Commercial Driver&apos;s License (CDL) and has extensive experience in safety compliance, workforce coordination, and operational execution.
+                </p>
               </div>
             </div>
           </div>

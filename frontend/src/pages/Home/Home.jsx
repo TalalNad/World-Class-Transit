@@ -74,7 +74,7 @@ const Home = () => {
               </div>
               <div className="home-about__accent-card">
                 <span className="home-about__accent-number">15+</span>
-                <span className="home-about__accent-text">Years of Service</span>
+                <span className="home-about__accent-text">Years of Experience</span>
               </div>
             </div>
             <div className="home-about__content">
