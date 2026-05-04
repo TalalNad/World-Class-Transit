@@ -89,8 +89,8 @@ export const whyChooseUs = [
 export const companyInfo = {
   name: 'World Class Transit Group',
   tagline: 'People-First Transportation',
-  phone: '(555) 123-4567',
-  email: 'info@wctransitgroup.com',
+  phone: '(224) 857-1455',
+  email: 'wctroutes@gmail.com',
   address: 'Elgin, IL',
   social: {
     facebook: '#',

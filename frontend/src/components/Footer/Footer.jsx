@@ -50,11 +50,11 @@ const Footer = () => {
               <ul className="footer__contact-list">
                 <li className="footer__contact-item">
                   <FiPhone className="footer__contact-icon" />
-                  <a href="tel:5551234567" className="footer__link">(555) 123-4567</a>
+                  <a href="tel:2248571455" className="footer__link">(224) 857-1455</a>
                 </li>
                 <li className="footer__contact-item">
                   <FiMail className="footer__contact-icon" />
-                  <a href="mailto:info@wctransitgroup.com" className="footer__link">info@wctransitgroup.com</a>
+                  <a href="mailto:wctroutes@gmail.com" className="footer__link">wctroutes@gmail.com</a>
                 </li>
                 <li className="footer__contact-item">
                   <FiMapPin className="footer__contact-icon" />

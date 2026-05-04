@@ -37,8 +37,8 @@ const Navbar = () => {
       <div className="navbar__topbar">
         <div className="container navbar__topbar-inner">
           <div className="navbar__topbar-left">
-            <a href="tel:5551234567" className="navbar__topbar-phone">
-              <FiPhone /> (555) 123-4567
+            <a href="tel:2248571455" className="navbar__topbar-phone">
+              <FiPhone /> (224) 857-1455
             </a>
             <span className="navbar__topbar-divider">|</span>
             <span className="navbar__topbar-text">Serving Communities with Care</span>
@@ -71,7 +71,7 @@ const Navbar = () => {
               </li>
             ))}
             <li className="navbar__item navbar__item--cta">
-              <a href="tel:5551234567" className="navbar__cta">
+              <a href="tel:2248571455" className="navbar__cta">
                 <FiPhone />
                 <span>Call Us</span>
               </a>

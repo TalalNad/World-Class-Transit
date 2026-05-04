@@ -11,15 +11,15 @@ const contactCards = [
   {
     icon: <FiPhone />,
     title: 'Call Us',
-    lines: ['(555) 123-4567', 'Available 24/7'],
-    action: { label: 'Call Now', href: 'tel:5551234567' },
+    lines: ['(224) 857-1455', 'Available 24/7'],
+    action: { label: 'Call Now', href: 'tel:2248571455' },
     iconClassName: 'contact-card__icon--green',
   },
   {
     icon: <FiMail />,
     title: 'Email Us',
-    lines: ['info@wctransitgroup.com', 'We reply within 24 hours'],
-    action: { label: 'Send Email', href: 'mailto:info@wctransitgroup.com' },
+    lines: ['wctroutes@gmail.com', 'We reply within 24 hours'],
+    action: { label: 'Send Email', href: 'mailto:wctroutes@gmail.com' },
   },
   {
     icon: <FiMapPin />,
@@ -303,7 +303,7 @@ SPECIAL NEEDS / NOTES
                 )}
                 {submitStatus === 'error' && (
                   <div className="contact-form__error">
-                    Oops! Something went wrong. Please try again later or call us directly at (555) 123-4567.
+                    Oops! Something went wrong. Please try again later or call us directly at (224) 857-1455.
                   </div>
                 )}
 
@@ -351,14 +351,14 @@ SPECIAL NEEDS / NOTES
                     <FiPhone className="contact-info-card__icon" />
                     <div>
                       <strong>Phone</strong>
-                      <a href="tel:5551234567">(555) 123-4567</a>
+                      <a href="tel:2248571455">(224) 857-1455</a>
                     </div>
                   </li>
                   <li>
                     <FiMail className="contact-info-card__icon" />
                     <div>
                       <strong>Email</strong>
-                      <a href="mailto:info@wctransitgroup.com">info@wctransitgroup.com</a>
+                      <a href="mailto:wctroutes@gmail.com">wctroutes@gmail.com</a>
                     </div>
                   </li>
                 </ul>

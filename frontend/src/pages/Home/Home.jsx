@@ -201,7 +201,7 @@ const Home = () => {
             <p>Contact us today and experience world-class transportation service.</p>
           </div>
           <div className="home-cta__actions">
-            <Button variant="secondary" size="lg" href="tel:5551234567" icon={<FiPhone />}>
+            <Button variant="secondary" size="lg" href="tel:2248571455" icon={<FiPhone />}>
               Call Us Now
             </Button>
             <Button variant="outline" size="lg" to="/contact" className="home-cta__btn-outline">

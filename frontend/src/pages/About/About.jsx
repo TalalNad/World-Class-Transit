@@ -116,7 +116,7 @@ const About = () => {
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Jeremy Hawkins</h3>
-                <span className="about-leadership__title">Co-founder, CEO &amp; COO</span>
+                <span className="about-leadership__title">Founder, CEO &amp; COO</span>
                 <p className="about-leadership__bio">
                   Jeremy Hawkins is an experienced sales and operations professional with over 15 years of success in boosting revenue, improving margins, and optimizing processes across transportation, manufacturing, and B2B service industries. He has a proven track record of building scalable sales systems, enhancing team performance, and fostering strong relationships in fast-paced, high-demand environments.
                 </p>

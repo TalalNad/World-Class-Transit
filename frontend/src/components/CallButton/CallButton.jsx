@@ -1,7 +1,7 @@
 import { FiPhone } from 'react-icons/fi';
 import './CallButton.css';
 
-const CallButton = ({ phoneNumber = '(555) 123-4567', className = '' }) => {
+const CallButton = ({ phoneNumber = '(224) 857-1455', className = '' }) => {
   return (
     <a
       href={`tel:${phoneNumber.replace(/\D/g, '')}`}
