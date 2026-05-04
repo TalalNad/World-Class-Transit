@@ -116,7 +116,7 @@ const About = () => {
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Jeremy Hawkins</h3>
-                <span className="about-leadership__title">Founder &amp; Chief Executive Officer</span>
+                <span className="about-leadership__title">Co-founder, CEO &amp; COO</span>
                 <p className="about-leadership__bio">
                   Jeremy Hawkins is an experienced sales and operations professional with over 15 years of success in boosting revenue, improving margins, and optimizing processes across transportation, manufacturing, and B2B service industries. He has a proven track record of building scalable sales systems, enhancing team performance, and fostering strong relationships in fast-paced, high-demand environments.
                 </p>
@@ -132,9 +132,9 @@ const About = () => {
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Corey D. Dixon, MPA</h3>
-                <span className="about-leadership__title">Chief Strategy &amp; Public Affairs Officer</span>
+                <span className="about-leadership__title">Co-founder, CFO &amp; Chief of Strategy &amp; Public Affairs</span>
                 <p className="about-leadership__bio">
-                  Corey Dixon is a public affairs and operations leader with over a decade of experience at the intersection of government, business, and community engagement. As a City Councilman in Elgin, he provides strategic oversight for a city of 115,000+ residents and a $400M+ budget. He has led impactful programs in public safety, reduced recidivism, secured grant funding, and built partnerships that connect people to jobs and drive community growth.
+                  Corey Dixon is a strategy and public affairs leader with over a decade of experience at the intersection of government, business, and community programming. With a background in business and public service, he has built a career by connecting organizations and people to solutions.
                 </p>
               </div>
             </div>
@@ -148,9 +148,9 @@ const About = () => {
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Demetrious Dixon</h3>
-                <span className="about-leadership__title">Director of Fleet Operations</span>
+                <span className="about-leadership__title">Co-founder, Chief of Fleet Operations</span>
                 <p className="about-leadership__bio">
-                  Demetrious Dixon is a transportation and logistics professional in roadway operations, fleet management, and safety compliance. Having a background with the Illinois Department of Transportation, he is responsible for maintaining critical infrastructure, operating heavy equipment, and responding to emergency roadway situations. He holds a Class A Commercial Driver&apos;s License (CDL) and has extensive experience in safety compliance, workforce coordination, and operational execution.
+                  Demetrious Dixon is a transportation and logistics professional in roadway operations, fleet management, and safety compliance. Having a background in transportation, he is responsible for vehicle maintenance and licensing. He holds a Class A Commercial Driver&apos;s License (CDL) and has extensive experience in safety compliance, workforce coordination, and operational execution.
                 </p>
               </div>
             </div>
