@@ -77,9 +77,7 @@ const About = () => {
               title="Built on Care, Driven by Purpose"
             />
             <p>
-              World Class Transit Group was born from a simple observation: too many
-              people in our community were missing critical healthcare appointments
-              because they lacked reliable transportation. We set out to change that.
+              World Class Transit Group was born from a simple observation: too many people in our community were missing critical healthcare appointments because they lacked reliable transportation. We set out to change that by creating a dependable, compassionate, and accessible transit service for those who need it most. Today, our mission is to bridge the gap between people and the care they deserve.
             </p>
             <p>
               What started as a small operation with a handful of dedicated drivers
