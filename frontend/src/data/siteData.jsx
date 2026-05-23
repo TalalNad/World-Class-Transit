@@ -35,7 +35,7 @@ export const services = [
     icon: <FiUsers />,
     title: 'Medical Courior Service',
     description:
-      'Connecting communities to essential destinations — grocery stores, pharmacies, social services, and more. Mobility for everyone.',
+      'Helping individuals and healthcare facilities get access to the care and resources they need with safe and dependable transportation. From pharmacies and medical facilities to specialist visits, organ transports, and other healthcare-related services, our team is here to help make the process easier and more reliable.',
   },
   {
     id: 'facility-contracts',
