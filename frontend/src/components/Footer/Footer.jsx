@@ -54,7 +54,7 @@ const Footer = () => {
                 </li>
                 <li className="footer__contact-item">
                   <FiMail className="footer__contact-icon" />
-                  <a href="mailto:wctroutes@gmail.com" className="footer__link">wctroutes@gmail.com</a>
+                  <a href="mailto:rides@worldclasstransitgroup.com" className="footer__link">rides@worldclasstransitgroup.com</a>
                 </li>
                 <li className="footer__contact-item">
                   <FiMapPin className="footer__contact-icon" />

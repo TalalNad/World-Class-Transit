@@ -90,7 +90,7 @@ export const companyInfo = {
   name: 'World Class Transit Group',
   tagline: 'People-First Transportation',
   phone: '(224) 857-1455',
-  email: 'wctroutes@gmail.com',
+  email: 'rides@worldclasstransitgroup.com',
   address: 'Elgin, IL',
   social: {
     facebook: '#',

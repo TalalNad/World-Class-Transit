@@ -18,8 +18,8 @@ const contactCards = [
   {
     icon: <FiMail />,
     title: 'Email Us',
-    lines: ['wctroutes@gmail.com', 'We reply within 24 hours'],
-    action: { label: 'Send Email', href: 'mailto:wctroutes@gmail.com' },
+    lines: ['rides@worldclasstransitgroup.com', 'We reply within 24 hours'],
+    action: { label: 'Send Email', href: 'mailto:rides@worldclasstransitgroup.com' },
   },
   {
     icon: <FiMapPin />,
@@ -210,6 +210,7 @@ SPECIAL NEEDS / NOTES
                 <input type="hidden" name="message" />
                 <input type="hidden" name="reply_to" />
                 <input type="hidden" name="from_name" />
+                <input type="hidden" name="to_email" value="rides@worldclasstransitgroup.com" />
 
                 {/* ---- Passenger Info ---- */}
                 <div className="contact-form__section-label">Passenger Information</div>
@@ -358,7 +359,7 @@ SPECIAL NEEDS / NOTES
                     <FiMail className="contact-info-card__icon" />
                     <div>
                       <strong>Email</strong>
-                      <a href="mailto:wctroutes@gmail.com">wctroutes@gmail.com</a>
+                      <a href="mailto:rides@worldclasstransitgroup.com">rides@worldclasstransitgroup.com</a>
                     </div>
                   </li>
                 </ul>

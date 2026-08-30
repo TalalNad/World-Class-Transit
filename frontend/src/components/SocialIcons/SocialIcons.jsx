@@ -1,12 +1,9 @@
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import './SocialIcons.css';
 
 const socialLinks = [
-  { name: 'Facebook', icon: <FaFacebookF />, url: '#' },
-  { name: 'LinkedIn', icon: <FaLinkedinIn />, url: '#' },
-  { name: 'Instagram', icon: <FaInstagram />, url: '#' },
-  { name: 'X', icon: <FaXTwitter />, url: '#' },
+  { name: 'Facebook', icon: <FaFacebookF />, url: 'https://www.facebook.com/worldclasstransitgroup' },
+  { name: 'Instagram', icon: <FaInstagram />, url: 'https://www.instagram.com/worldclasstransit/' },
 ];
 
 const SocialIcons = ({ variant = 'default', className = '' }) => {
