@@ -1,10 +1,10 @@
 import { FiPhone } from 'react-icons/fi';
 import './CallButton.css';
 
-const CallButton = ({ phoneNumber = '(224) 857-1455', className = '' }) => {
+const CallButton = ({ phoneNumber = '+1 (847) 907 - 6879', className = '' }) => {
   return (
     <a
-      href={`tel:${phoneNumber.replace(/\D/g, '')}`}
+      href={`tel:${phoneNumber.replace(/[^\d+]/g, '')}`}
       className={`call-button ${className}`}
       id="call-button"
       aria-label="Call us now"

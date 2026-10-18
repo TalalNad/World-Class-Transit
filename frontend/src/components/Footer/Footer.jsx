@@ -50,7 +50,7 @@ const Footer = () => {
               <ul className="footer__contact-list">
                 <li className="footer__contact-item">
                   <FiPhone className="footer__contact-icon" />
-                  <a href="tel:2248571455" className="footer__link">(224) 857-1455</a>
+                  <a href="tel:+18479076879" className="footer__link">+1 (847) 907 - 6879</a>
                 </li>
                 <li className="footer__contact-item">
                   <FiMail className="footer__contact-icon" />

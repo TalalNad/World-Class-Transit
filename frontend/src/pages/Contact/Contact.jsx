@@ -11,8 +11,8 @@ const contactCards = [
   {
     icon: <FiPhone />,
     title: 'Call Us',
-    lines: ['(224) 857-1455', 'Available 24/7'],
-    action: { label: 'Call Now', href: 'tel:2248571455' },
+    lines: ['+1 (847) 907 - 6879', 'Available 24/7'],
+    action: { label: 'Call Now', href: 'tel:+18479076879' },
     iconClassName: 'contact-card__icon--green',
   },
   {
@@ -304,7 +304,7 @@ SPECIAL NEEDS / NOTES
                 )}
                 {submitStatus === 'error' && (
                   <div className="contact-form__error">
-                    Oops! Something went wrong. Please try again later or call us directly at (224) 857-1455.
+                    Oops! Something went wrong. Please try again later or call us directly at +1 (847) 907 - 6879.
                   </div>
                 )}
 
@@ -352,7 +352,7 @@ SPECIAL NEEDS / NOTES
                     <FiPhone className="contact-info-card__icon" />
                     <div>
                       <strong>Phone</strong>
-                      <a href="tel:2248571455">(224) 857-1455</a>
+                      <a href="tel:+18479076879">+1 (847) 907 - 6879</a>
                     </div>
                   </li>
                   <li>
