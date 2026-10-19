@@ -1,6 +1,9 @@
 import { FiCheckCircle, FiHeart, FiShield, FiUsers, FiTarget } from 'react-icons/fi';
 import HeroSection from '../../components/HeroSection';
 import SectionHeading from '../../components/SectionHeading';
+import jeremyPhoto from '../../assets/team/jeremy.jpg';
+import coreyPhoto from '../../assets/team/corey.jpg';
+import dimitriPhoto from '../../assets/team/dimitri.jpg';
 import './About.css';
 
 const values = [
@@ -108,9 +111,7 @@ const About = () => {
             {/* Jeremy Hawkins */}
             <div className="about-leadership__card">
               <div className="about-leadership__photo">
-                <div className="about-leadership__photo-placeholder">
-                  <span>JH</span>
-                </div>
+                <img src={jeremyPhoto} alt="Jeremy Hawkins" loading="lazy" />
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Jeremy Hawkins</h3>
@@ -124,9 +125,7 @@ const About = () => {
             {/* Corey Dixon */}
             <div className="about-leadership__card">
               <div className="about-leadership__photo">
-                <div className="about-leadership__photo-placeholder">
-                  <span>CD</span>
-                </div>
+                <img src={coreyPhoto} alt="Corey D. Dixon" loading="lazy" />
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Corey D. Dixon, MPA</h3>
@@ -140,9 +139,7 @@ const About = () => {
             {/* Demetrious Dixon */}
             <div className="about-leadership__card">
               <div className="about-leadership__photo">
-                <div className="about-leadership__photo-placeholder">
-                  <span>DD</span>
-                </div>
+                <img src={dimitriPhoto} alt="Demetrious Dixon" loading="lazy" />
               </div>
               <div className="about-leadership__info">
                 <h3 className="about-leadership__name">Demetrious Dixon</h3>
